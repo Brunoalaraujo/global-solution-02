@@ -1,25 +1,23 @@
 package br.com.challenge.view.user;
 
-import br.com.challenge.dao.UsersDAO;
-import br.com.challenge.model.Users;
+import br.com.challenge.dao.UserDAO;
+import br.com.challenge.model.User;
 
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class CreateUserView {
-    public static void execute(Scanner sc, UsersDAO usersDAO) throws SQLException {
-        System.out.println("Digite o Id: ");
-        int id = sc.nextInt();
-        System.out.println("Digite seu nome: ");
-        String nome = sc.next() + sc.nextLine();
-        System.out.println("Digite seu email: ");
-        String email = sc.next() + sc.nextLine();
-        System.out.println("Digite seu senha: ");
-        String senha = sc.next() + sc.nextLine();
+    public static void execute(Scanner sc, UserDAO userDAO) throws SQLException {
+        System.out.print("Digite seu nome: ");
+        String name = sc.next();
+        System.out.print("Digite seu email: ");
+        String email = sc.next();
+        System.out.print("Digite seu senha: ");
+        String password = sc.next();
 
-        Users User = new Users(id, nome, email, senha);
-        usersDAO.create(User);
+        User user = new User(name, email, password);
+        userDAO.create(user);
 
-        System.out.println("Usuario criado com sucesso!");
+        System.out.println("\n---Usuário criado com sucesso!---\n");
     }
 }

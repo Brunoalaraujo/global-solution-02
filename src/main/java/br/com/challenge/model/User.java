@@ -1,27 +1,26 @@
 package br.com.challenge.model;
 
-public class Users {
+public class User {
 
     private int id;
     private String email;
     private String name;
     private String password;
 
-    public Users(){}
-
-    public Users(String email, String name, String password) {
+    public User(int id, String email, String name, String password) {
         this.id = id;
         this.email = email;
         this.name = name;
         this.password = password;
     }
 
-    public Users(int id, String email, String name, String password) {
-        this.id = id;
+    public User(String email, String name, String password) {
         this.email = email;
         this.name = name;
         this.password = password;
     }
+
+    public User(){}
 
     public int getId() {
         return id;

@@ -1,20 +1,25 @@
 package br.com.challenge.view.user;
 
-import br.com.challenge.dao.UsersDAO;
-import br.com.challenge.model.Users;
+import br.com.challenge.dao.UserDAO;
+import br.com.challenge.model.User;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class ListUsersView {
-    public static void execute(UsersDAO usersDAO) throws SQLException {
-        List<Users> list = usersDAO.list();
+    public static void execute(UserDAO userDAO) throws SQLException {
+        List<User> list = userDAO.getAll();
 
-        for (Users user : list) {
-            System.out.println("");
+        System.out.println("------------------------Lista de usuários-------------------------------------");
+
+        if (list.isEmpty()) {
+            System.out.println("Lista vazia");
+            System.out.println("-------------------------------------------------------------------------------------");
+        }
+
+        for (User user : list) {
             System.out.println("Id: " + user.getId() + "\nNome: " + user.getName() + "\nEmail: " + user.getEmail() + "\nPassword: " + user.getPassword());
             System.out.println("-------------------------------------------------------------------------------------");
-            System.out.println("");
         }
 
     }
