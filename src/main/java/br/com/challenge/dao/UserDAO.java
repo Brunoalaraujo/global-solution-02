@@ -76,7 +76,7 @@ public class UserDAO {
         int line = stm.executeUpdate();
 
         if (line == 0) {
-            throw new NotFoundException("Usuário nao encontrado");
+            throw new NotFoundException("Usuário não encontrado");
         }
     }
 
@@ -86,7 +86,7 @@ public class UserDAO {
         int line = stm.executeUpdate();
 
         if (line == 0) {
-            throw new NotFoundException("Usuário nao encontrado");
+            throw new NotFoundException("Usuário não encontrado");
         }
     }
 }

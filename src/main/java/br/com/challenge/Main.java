@@ -1,6 +1,7 @@
 package br.com.challenge;
 
 import br.com.challenge.view.user.*;
+import br.com.challenge.view.wallet.WalletView;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -42,7 +43,7 @@ public class Main {
         try {
             switch (choice) {
                 case 1 -> UserView.execute();
-                case 2 -> System.out.println("TODO: WalletView");
+                case 2 -> WalletView.execute();
                 case 3 -> System.out.println("TODO: OrderView");
                 case 0 -> System.out.println("Saindo da aplicação...");
                 default -> System.out.println("\n---Opção inválida!---\n");
