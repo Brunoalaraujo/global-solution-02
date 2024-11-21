@@ -1,5 +1,6 @@
 package br.com.challenge;
 
+import br.com.challenge.view.order.OrderView;
 import br.com.challenge.view.user.*;
 import br.com.challenge.view.wallet.WalletView;
 
@@ -24,7 +25,7 @@ public class Main {
         System.out.println("Escolha uma opção: ");
         System.out.println("1. Usuários");
         System.out.println("2. Carteiras");
-        System.out.println("3. Transações");
+        System.out.println("3. Ordens");
         System.out.println("0. Sair");
     }
 
@@ -44,7 +45,7 @@ public class Main {
             switch (choice) {
                 case 1 -> UserView.execute();
                 case 2 -> WalletView.execute();
-                case 3 -> System.out.println("TODO: OrderView");
+                case 3 -> OrderView.execute();
                 case 0 -> System.out.println("Saindo da aplicação...");
                 default -> System.out.println("\n---Opção inválida!---\n");
             }
