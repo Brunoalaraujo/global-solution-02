@@ -35,7 +35,7 @@ public class CreateOrderView {
             System.out.print("Digite a quantidade da ordem: ");
             BigDecimal amount = sc.nextBigDecimal();
 
-            if (price.multiply(amount).compareTo(existingWallet.getBalance()) > 0) {
+            if (amount.compareTo(existingWallet.getEnergyBalance()) > 0 || price.multiply(amount).compareTo(existingWallet.getBalance()) > 0) {
                 throw new IllegalArgumentException("Saldo insuficiente para realizar a ordem.");
             }
 
